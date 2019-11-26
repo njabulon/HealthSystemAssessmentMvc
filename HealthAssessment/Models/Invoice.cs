@@ -21,6 +21,7 @@ namespace HealthAssessment.Models
         }
     
         public long InvoiceId { get; set; }
+        
         public System.DateTime InvoiceDateTime { get; set; }
         public long PatientId { get; set; }
         public decimal InvoiceTotal { get; set; }
