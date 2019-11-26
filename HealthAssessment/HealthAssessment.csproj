@@ -132,15 +132,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Hospital.Context.cs">
+    <Compile Include="Models\Hospital.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Hospital.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Hospital.Designer.cs">
+    <Compile Include="Models\Hospital.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hospital.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Hospital.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice.cs">
+      <DependentUpon>Hospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvoiceLine.cs">
+      <DependentUpon>Hospital.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Patient.cs">
+      <DependentUpon>Hospital.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -153,19 +167,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Hospital.Context.tt">
+    <Content Include="Models\Hospital.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Hospital.edmx</DependentUpon>
       <LastGenOutput>Hospital.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Hospital.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Hospital.edmx</DependentUpon>
+      <LastGenOutput>Hospital.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Hospital.edmx">
+    <EntityDeploy Include="Models\Hospital.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Hospital.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Hospital.edmx.diagram">
+    <Content Include="Models\Hospital.edmx.diagram">
       <DependentUpon>Hospital.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -194,7 +214,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
